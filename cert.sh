@@ -23,6 +23,9 @@ then
   # Generate wildcard certificate (this will take approx 130s)
   ~/.acme.sh/acme.sh --issue -d $DOMAIN  -d "*.$DOMAIN"  --dns dns_dnsimple
 
+  # Always attempt to install Heroku CLI because it may not exist on the dyno.
+  npm install -g heroku
+
   # Update the certificate in the live app
   heroku certs:update "/app/.acme.sh/$DOMAIN/fullchain.cer" "/app/.acme.sh/$DOMAIN/$DOMAIN.key" --confirm $HEROKU_APP --app $HEROKU_APP
 fi
