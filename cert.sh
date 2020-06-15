@@ -3,8 +3,7 @@ set -e
 
 # NEEDS THE FOLLOWING VARS IN ENV:
 # DOMAIN
-# CLOUDFLARE_EMAIL
-# CLOUDFLARE_API_KEY
+# DNSIMPLE_TOKEN
 # HEROKU_API_KEY
 # HEROKU_APP
 
@@ -12,7 +11,7 @@ set -e
 if [ "$(date +%u)" = 1 ]
 then
   # Download dependencies
-  git clone https://github.com/Neilpang/acme.sh.git
+  git clone https://github.com/acmesh-official/acme.sh.git
   cd ./acme.sh
 
   # Force ensures it doesnt fail because of lack of cron
