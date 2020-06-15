@@ -21,7 +21,7 @@ then
   export DNSimple_OAUTH_TOKEN=$DNSIMPLE_TOKEN
 
   # Generate wildcard certificate (this will take approx 130s)
-  ./acme.sh  --issue -d $DOMAIN  -d "*.$DOMAIN"  --dns dns_dnsimple
+  ~/.acme.sh/acme.sh --issue -d $DOMAIN  -d "*.$DOMAIN"  --dns dns_dnsimple
 
   # Update the certificate in the live app
   heroku certs:update "/app/.acme.sh/$DOMAIN/fullchain.cer" "/app/.acme.sh/$DOMAIN/$DOMAIN.key" --confirm $HEROKU_APP --app $HEROKU_APP
