@@ -1,0 +1,23 @@
+{
+  "name": "acm",
+  "version": "1.0.0",
+  "description": "Just an NPM package for automatic LetsEncrypt certificate renewals.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iheanyi/acm.git"
+  },
+  "keywords": [
+    "letsencrypt",
+    "certificates"
+  ],
+  "author": "Iheanyi Ekechukwu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iheanyi/acm/issues"
+  },
+  "homepage": "https://github.com/iheanyi/acm#readme"
+}
