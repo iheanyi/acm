@@ -18,11 +18,10 @@ then
   ./acme.sh --install --force
 
   # Map to environment variables that the ACME script requires
-  export CF_Email=$CLOUDFLARE_EMAIL
-  export CF_Key=$CLOUDFLARE_API_KEY
+  export DNSimple_OAUTH_TOKEN=$DNSIMPLE_TOKEN
 
   # Generate wildcard certificate (this will take approx 130s)
-  ~/.acme.sh/acme.sh  --issue -d $DOMAIN  -d "*.$DOMAIN"  --dns dns_cf
+  ./acme.sh  --issue -d $DOMAIN  -d "*.$DOMAIN"  --dns dns_dnsimple
 
   # Update the certificate in the live app
   heroku certs:update "/app/.acme.sh/$DOMAIN/fullchain.cer" "/app/.acme.sh/$DOMAIN/$DOMAIN.key" --confirm $HEROKU_APP --app $HEROKU_APP
